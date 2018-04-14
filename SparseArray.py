@@ -95,6 +95,6 @@ print(array[-1])
 print(array.get_usage())
 print(array[0])
 print(array[0] is None)
-print(array[1000000])
+print(array[100000000])
 
 
