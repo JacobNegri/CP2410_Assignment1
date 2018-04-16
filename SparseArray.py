@@ -10,6 +10,7 @@ from Node import Node
 # The spase array class including the functions:
 # _init_, fill(seq), _getitem_(j), _setitem_(j,e), _len_(), get_usage(), Find_index, print_list
 
+
 class SparseArray(object):
 
     # Constructing an initially empty SparseArray of size n
@@ -27,13 +28,14 @@ class SparseArray(object):
     def __len__(self):
         return self.size
 
-    # Setting
+    # Setting a nodes indexing
     def __setitem__(self, j, e):
         i = self.find_index(j)
         new_node = Node(e, i, self.root)
         self.root = new_node
         self.use += 1
 
+    # Getting a nodes index
     def __getitem__(self, j):
         i = self.find_index(j)
         this_node = self.root
@@ -44,6 +46,7 @@ class SparseArray(object):
                 this_node = this_node.get_next()
         return None
 
+    # filling the sparse array
     def fill(self, seq):
         if len(seq) < self.size:
             print(len(seq))
@@ -53,9 +56,11 @@ class SparseArray(object):
             print("ValueError: sequence longer than sparse array")
             raise SystemExit
 
+    # returning the number of non-empty elements
     def get_usage(self):
         return self.use
 
+    # finds an index and returns the value stored in that index
     def find_index(self, j):
         if -1 * self.size < j < 0:
             return self.size - abs(j)
@@ -65,7 +70,8 @@ class SparseArray(object):
             print("IndexError: index out of range")
             raise SystemExit
 
-    def print_list(self):
+    # printing the sparse array
+    def print_sparse_array(self):
         print("Sparse Array:")
         this_node = self.root
         while this_node.has_next():
