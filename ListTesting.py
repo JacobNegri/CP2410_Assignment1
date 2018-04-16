@@ -15,7 +15,6 @@ for q in range(3,9):
             #python cant handle > 1 billion
             #if f > 8 = a billion
 
-
     for m in m_list:
         print("m: " + str(m))
         for o in range(1, m):
