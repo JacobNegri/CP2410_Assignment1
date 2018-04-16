@@ -16,9 +16,6 @@ for q in range(3,9):
             #if f > 8 = a billion
 
 
-
-#input data manually???
-
     for m in m_list:
         print("m: " + str(m))
         for o in range(1, m):

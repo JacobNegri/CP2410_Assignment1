@@ -38,12 +38,12 @@ class SparseArray(object):
     # Getting a nodes index
     def __getitem__(self, j):
         i = self.find_index(j)
-        this_node = self.root
-        while this_node is not None:
-            if this_node.get_index() == i:
-                return this_node.element
+        current_node = self.root
+        while current_node is not None:
+            if current_node.get_index() == i:
+                return current_node.element
             else:
-                this_node = this_node.get_next()
+                current_node = current_node.get_next()
         return None
 
     # filling the sparse array
@@ -53,6 +53,7 @@ class SparseArray(object):
             for x in range(len(seq)):
                 self[x] = seq[x]
         else:
+            # raising a value error and exiting the system
             print("ValueError: sequence longer than sparse array")
             raise SystemExit
 
@@ -73,10 +74,10 @@ class SparseArray(object):
     # printing the sparse array
     def print_sparse_array(self):
         print("Sparse Array:")
-        this_node = self.root
-        while this_node.has_next():
-            print(this_node.to_string())
-            this_node = this_node.get_next()
+        current_node = self.root
+        while current_node.has_next():
+            print(current_node.to_string())
+            current_node = current_node.get_next()
 
 
 # Crating the sample output as seen in the assignment task sheet
