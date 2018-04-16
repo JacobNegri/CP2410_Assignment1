@@ -4,43 +4,30 @@
 # Name: Jacob Negri
 # SN: 13165429
 
-class Node(object):
-    def __init__(self, d=None, i=None, n=None):
-        self.element = d #element characteristic for node type
-        self.index = i #node index characteristic for node type
-        self.next_node = n #linkedlist pointer for node
+# importing node to be used in the sparse array class
+from Node import Node
 
-    def get_next(self):
-       return self.next_node
-
-    def get_data(self):
-        return self.element
-
-    def set_data(self, d):
-        self.element = d
-
-    def get_index(self):
-        return self.index
-
-    def to_string(self):
-        return "Element: " + str(self.element)
-
-    def has_next(self):
-        if self.get_next() is None:
-            return False
-        return True
-
+# The spase array class including the functions:
+# _init_, fill(seq), _getitem_(j), _setitem_(j,e), _len_(), get_usage(), Find_index, print_list
 
 class SparseArray(object):
-    def __init__(self, n, r=None):
-        self.root = Node()  # initial empty node pointer for start
-        self.last = Node()  # initial empty node pointer for end
-        self.size = n  # set size of SparseArray, n
-        self.use = 0  # initial set of non-empty element variable
 
+    # Constructing an initially empty SparseArray of size n
+    def __init__(self, n, r=None):
+        # initial empty node pointer for start
+        self.root = Node()
+        # initial empty node pointer for end
+        self.last = Node()
+        # set size of SparseArray as variable n
+        self.size = n
+        # initial set of non-empty element variable
+        self.use = 0
+
+    # Returns the length of the array
     def __len__(self):
         return self.size
 
+    # Setting
     def __setitem__(self, j, e):
         i = self.find_index(j)
         new_node = Node(e, i, self.root)
@@ -86,6 +73,7 @@ class SparseArray(object):
             this_node = this_node.get_next()
 
 
+# Crating the sample output as seen in the assignment task sheet
 array = SparseArray(1000000)
 print(len(array))
 print(array.get_usage())
