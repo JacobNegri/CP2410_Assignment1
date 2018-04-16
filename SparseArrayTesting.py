@@ -6,12 +6,12 @@ for q in range(3,13):
     n = 10**q
     print("n: " + n)
     array = SparseArray(n)
-    Ms = []
+    m_list = []
     for f in range(0,q):
         if f < 8:
-            Ms.append(10 ** f)
+            m_list.append(10 ** f)
 
-    for m in Ms:
+    for m in m_list:
         print("m: " + m)
         for m in range(1, m):
             num = random.randint(0, n-1)

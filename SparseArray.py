@@ -86,7 +86,7 @@ class SparseArray(object):
             this_node = this_node.get_next()
 
 
-array = SparseArray(100000000)
+array = SparseArray(1000000)
 print(len(array))
 print(array.get_usage())
 array[999999] = 42
@@ -95,6 +95,6 @@ print(array[-1])
 print(array.get_usage())
 print(array[0])
 print(array[0] is None)
-print(array[100000000])
+print(array[1000000])
 
 
