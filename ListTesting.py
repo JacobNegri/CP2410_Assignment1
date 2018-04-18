@@ -1,7 +1,11 @@
+# python cant handle > 1 billion
+#python cant handle 10^9 elements
+# if f > 8 = a billion
+
 from time import clock
 import random
 
-
+#testing list at varying values of n
 for q in range(3,9):
     print("")
     n = 10**q
@@ -12,9 +16,7 @@ for q in range(3,9):
         if f < 8:
             m_list.append(10 ** f)
 
-            #python cant handle > 1 billion
-            #if f > 8 = a billion
-
+    #testing each number of ms for list of n
     for m in m_list:
         print("m: " + str(m))
         for o in range(1, m):
